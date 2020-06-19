@@ -10,7 +10,9 @@ module.exports = config => {
     //Watching for modificaions in style directory
     sass('./style/index.scss', './_site/style/index.css');
     //Passing assets as is to docs directory
-    const assets = []
+    const assets = [
+        'js/index.js'
+    ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
     //Shortcodes
     
