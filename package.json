@@ -8,6 +8,7 @@
     "start": "npx @11ty/eleventy --serve",
     "code": "code && npx @11ty/eleventy --serve",
     "clean": "if [ -d _site ]; then trash _site; fi && npx @11ty/eleventy --serve",
+    "refresh-data": "node api-refresh.js",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "test-prod": "ELEVENTY_ENV=prod npx @11ty/eleventy",
     "prod": "npx @11ty/eleventy"

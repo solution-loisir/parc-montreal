@@ -6,9 +6,16 @@ title: Ahuntsic-Cartierville
 <ul>
 {% for p in parc.result.records %}
 {% if p['GESTION'] === 'Ahuntsic-Cartierville' %}
-<li>
+<li style="color:DarkBlue;">
 {{ p['Nom'] }}
 </li>
+{% for i in parcInstallations.features %}
+{% if (i.properties.INDEX_PARC === p.NUM_INDEX) and i.properties.TYPE === 'Sportif' %}
+<ul>
+<li style="color:FireBrick;">{{ i.properties.NOM }}</li>
+</ul>
+{% endif %}
+{% endfor %}
 {% endif %}
 {% endfor %}
 </ul>
