@@ -2,7 +2,8 @@
 layout: base-layout
 title: Ahuntsic-Cartierville
 ---
-<h1>Parcs {{ title }}</h1>
+<h1 id="title">Parcs {{ title }}</h1>
+<div id="content">
 <ul>
 {% for p in parc.result.records %}
 {% if p['GESTION'] === 'Ahuntsic-Cartierville' %}
@@ -19,3 +20,4 @@ title: Ahuntsic-Cartierville
 {% endif %}
 {% endfor %}
 </ul>
+</div>

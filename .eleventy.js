@@ -9,9 +9,12 @@ const htmlmin = require('html-minifier');
 module.exports = config => {
     //Watching for modificaions in style directory
     sass('./style/index.scss', './_site/style/index.css');
-    //Passing assets as is to docs directory
+    //Passing assets as is to _src directory
     const assets = [
-        'js/index.js'
+        'js/index.js',
+        '_src/_data/parc.json',
+        '_src/_data/parcGeoJSON.json',
+        '_src/_data/parcInstallations.json'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
     //Shortcodes
