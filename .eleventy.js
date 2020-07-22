@@ -1,28 +1,11 @@
 const sass = require('./config/sass-process');
-//Shortcodes
-
-//Filters
-
-//External
 const htmlmin = require('html-minifier');
 
 module.exports = config => {
     //Watching for modificaions in style directory
     sass('./style/index.scss', './_site/style/index.css');
     //Passing assets as is to _src directory
-    const assets = [
-        'js/index.js',
-        '_src/_data/parc.json',
-        '_src/_data/parcGeoJSON.json',
-        '_src/_data/parcInstallations.json'
-    ]
-    assets.forEach(asset => config.addPassthroughCopy(asset));
-    //Shortcodes
-    
-    //Filters
-    
-    //Custom collections
-    
+    config.addPassthroughCopy('js/index.js')
     //Set libraries
     config.setFrontMatterParsingOptions({
         excerpt: true,

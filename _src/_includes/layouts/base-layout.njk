@@ -2,23 +2,27 @@
 <html lang="fr-CA" id="top">
 <head>
     <meta charset="utf-8" />
+    <script src="https://unpkg.com/turbolinks@5.3.0-beta.0/dist/turbolinks.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <link rel="stylesheet" type="text/css" href="{{ '/style/index.css' | url }}" />
     <link rel="icon" type="image/png" href="#" sizes="16x16" />
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
     <link rel="icon" type="image/png" href="#" sizes="96x96" />
-    <script defer src="{{ '/js/index.js' | url }}"></script>
-    <link rel="canonical" href="" />
+    <script type="module" src="{{ '/js/index.js' | url }}" defer></script>
+    <link rel="canonical" href="https://parc-montreal.netlify.app{{ page.url | url }}" />
     <title>Parcs de Montréal | {{ title }}</title>
     <meta name="description" content="{{ description }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:url" content="{{ page.url | url }}" />
+    <meta property="og:url" content="https://parc-montreal.netlify.app{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage | url }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
 </head>
 <body>
+    {% include 'partials/pages-nav.njk' %}
+    <main>
     {{ content | safe }}
+    </main>
 </body>
 </html>

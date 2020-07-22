@@ -1,23 +1,16 @@
 ---
 layout: base-layout
 title: Ahuntsic-Cartierville
+tags: pages
 ---
 <h1 id="title">Parcs {{ title }}</h1>
-<div id="content">
+
 <ul>
-{% for p in parc.result.records %}
-{% if p['GESTION'] === 'Ahuntsic-Cartierville' %}
-<li style="color:DarkBlue;">
-{{ p['Nom'] }}
-</li>
-{% for i in parcInstallations.features %}
-{% if (i.properties.INDEX_PARC === p.NUM_INDEX) and i.properties.TYPE === 'Sportif' %}
-<ul>
-<li style="color:FireBrick;">{{ i.properties.NOM }}</li>
+{%- for p in parc.result.records %}
+{%- if p['GESTION'] === 'Ahuntsic-Cartierville' %}
+
+<li>{{ p['Nom'] }}</li>
+
+{% endif -%}
+{% endfor -%}
 </ul>
-{% endif %}
-{% endfor %}
-{% endif %}
-{% endfor %}
-</ul>
-</div>
