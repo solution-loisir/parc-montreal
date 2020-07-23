@@ -1,7 +1,7 @@
 <h1 id="title">Parcs {{ title }}</h1>
 
 <ul>
-{%- for p in parc.result.records %}
+{%- for p in parc %}
 {%- if p['GESTION'] === 'Ahuntsic-Cartierville' %}
 
 <li>{{ p['Nom'] }}</li>

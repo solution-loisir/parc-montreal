@@ -21,6 +21,7 @@
     "fibers": "^5.0.0",
     "fs-extra": "^8.1.0",
     "html-minifier": "^4.0.0",
+    "lodash.uniqby": "^4.7.0",
     "sass": "^1.26.3"
   }
 }
