@@ -2,8 +2,8 @@
 <html lang="fr-CA" id="top">
 <head>
     <meta charset="utf-8" />
-    <script src="https://unpkg.com/turbolinks@5.3.0-beta.0/dist/turbolinks.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <script src="https://unpkg.com/turbolinks@5.3.0-beta.0/dist/turbolinks.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ '/style/index.css' | url }}" />
     <link rel="icon" type="image/png" href="#" sizes="16x16" />
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
@@ -11,18 +11,22 @@
     <script type="module" src="{{ '/js/index.js' | url }}" defer></script>
     <link rel="canonical" href="https://parc-montreal.netlify.app{{ page.url | url }}" />
     <title>Parcs de Montréal | {{ title }}</title>
-    <meta name="description" content="{{ description }}" />
+    <meta name="description" content="{{ 'Les parcs de la ville de Montréal et leurs attraits. Trouvez quel parc contient quelles installations facilement.' if not description else description }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:description" content="{{ 'Les parcs de la ville de Montréal et leurs attraits. Trouvez quel parc contient quelles installations facilement.' if not description else description }}" />
     <meta property="og:url" content="https://parc-montreal.netlify.app{{ page.url | url }}" />
-    <meta property="og:image" content="{{ ogImage | url }}" />
-    <meta property="og:image:alt" content="{{ ogImageAlt }}" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="" />
 </head>
 <body>
+    <header>
+        <a href="{{ '/' | url }}">Accueil</a>
+        <h1>{{ title if page.url === '/' else 'Arrondissement ' + area }}</h1>
+    </header>
     {% include 'partials/pages-nav.njk' %}
     <main>
-    {{ content | safe }}
+        {{ content | safe }}
     </main>
 </body>
 </html>

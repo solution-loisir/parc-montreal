@@ -1,0 +1,15 @@
+{%- if p['GESTION'] === area %}
+
+<li>{{ p['Nom'] }}</li>
+
+<ul>
+{%- for i in parcInstallations.features %}
+{%- if (i.properties.INDEX_PARC === p.NUM_INDEX) and i.properties.TYPE === a.type %}
+
+<li class="{{ title | slug }}">{{ i.properties.NOM }}</li>
+
+{% endif -%}
+{% endfor -%}
+</ul>
+
+{% endif -%}

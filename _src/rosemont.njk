@@ -1,0 +1,24 @@
+---
+layout: base-layout
+area: Rosemont-La Petite-Patrie
+tags: Rosemont-La Petite-Patrie
+pagination:
+  data: featurePage
+  size: 1
+  addAllPagesToCollections: true
+eleventyComputed:
+  title: "{{ pagination.items[0].name }}"
+  description: "{{ pagination.items[0].name }} des parcs de la ville de Montréal située au Québec, Canada."
+permalink: "{{ area | lower | slug }}/{{ pagination.items[0].name | lower | slug }}/"
+---
+{% for a in pagination.items %}
+<ul>
+  {%- for p in rosemontlapetitepatrie %}
+    {% if a.name === 'Liste des parcs' %}
+      {% include 'partials/parcs.njk' %}
+    {% else %}
+      {% include 'partials/features.njk' %}
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endfor %}

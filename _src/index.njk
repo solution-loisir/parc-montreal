@@ -1,17 +1,11 @@
 ---
 layout: base-layout
-title: Ahuntsic-Cartierville
-date: 2020-06-01
-tags: pages
+title: Parcs de Montréal
 ---
-<h1 id="title">Parcs {{ title }}</h1>
-
-<ul>
-{%- for p in parc %}
-{%- if p['GESTION'] === 'Ahuntsic-Cartierville' %}
-
-<li>{{ p['Nom'] }}</li>
-
-{% endif -%}
-{% endfor -%}
-</ul>
+<nav>
+    <ul>
+        {% for arr in areaArray %}
+        <li><a href="{{ '/' + (arr | slug) + '/liste-des-parcs/' | url }}">{{ arr }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
